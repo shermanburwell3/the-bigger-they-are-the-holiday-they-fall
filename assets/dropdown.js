@@ -33,7 +33,15 @@ const countriesSorted = countries.sort();
 console.log(countriesSorted);
 
 $('#countries-menu').autocomplete({
-    source: countries,
+    source: countriesSorted,
+    minLength: 0,
+    scroll: true
+}).focus(function() {
+    $(this).autocomplete("search", "");
+});
+
+$('#months-menu').autocomplete({
+    source: months,
     minLength: 0,
     scroll: true
 }).focus(function() {
