@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*This code section is for the landing page slideshow*/
  body {
   margin: 0;

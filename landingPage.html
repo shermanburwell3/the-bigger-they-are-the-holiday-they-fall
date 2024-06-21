@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="./assets/landingPage.css">
     <title>Holiday They Fall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <header></header>
 
     <main>
         <!-- TODO: Create form using Tailwind-->
-    </main>
+         <div class="flex justify-center items-center h-screen">
+         <button id="openModal" class="bg-blue-500 text-white px-4 py-2 rounded font-bold">Discover A Holiday Near You!</button>
+    </div>
+   
+    <div id="modal" class="fixed inset-0 bg-gray-400 bg-opacity-50 hidden justify-center items-center">
+       <div class="flex justify-center items-center h-full w-full">
+        <div class="bg-whitte rounded-lg p-8 w-1/2 fade-in modal-content z-50">
+            <div class="mb-4">
+        <h2 class="text-xl-font-bold">Modal Title</h2>
+            </div>
+                <div class="mt-7">
+        <button id="submitModal" class="bg-red-500 text-white px-4 py-2 rounded font-bold">Submit</button>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+</main>
 
     <footer></footer>
 
