@@ -27,10 +27,14 @@ const countries = ['France',
     'Japan'
 ];
 
+console.log(countries);
 const countriesSorted = countries.sort();
 
+console.log(countriesSorted);
+
 $('#countries-menu').autocomplete({
-    source: countriesSorted,
+    source: countries,
+    minLength: 0,
     scroll: true
 }).focus(function() {
     $(this).autocomplete("search", "");
