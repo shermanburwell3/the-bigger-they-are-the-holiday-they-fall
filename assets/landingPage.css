@@ -18,6 +18,7 @@
   background-position: cover;
 }
 
+/*Targets the header element and sets styling*/
 h1 {
   color: #ffc422;
   font-family: "Rock Salt", cursive;
