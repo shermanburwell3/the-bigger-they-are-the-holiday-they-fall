@@ -14,6 +14,8 @@
 
 ## Credits
 
+Encodedna. (2013, August). jQuery Autocomplete Dropdown List on Focus. Retrieved from https://www.encodedna.com/2013/08/jquery-autocomplete-dropdown-list-on-focus.htm
+
 ### Collaborator(s):
 
 *   Babyak, Ethan, https://github.com/ebaby-ak 
@@ -25,7 +27,6 @@
 *   Stanton, Krystal, https://github.com/bldambtn 
 
 ### Research Sources:
-
 
 
 ### Image Sources: 
