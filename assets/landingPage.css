@@ -1,56 +1,28 @@
-/*This code section is for the landing page slideshow*/
- body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  animation: slideshow 35s infinite;
-  background-size: cover; /* Make the background image cover the entire viewport */
-  background-repeat: no-repeat; /* Prevent the background image from repeating */
-  background-position: center; /* Center the background image */
+/*Global selector*/
+* {
+  /*sets box sizing so the textinput fields will have a border*/
+  box-sizing: border-box;
 }
 
-@keyframes slideshow {
-  0% {
-    background-image: url('./landing_images/img-1.jpg');
-    background-position: 0 0; /* Start from the left */
-    opacity: 1; /* Fully visible */
-  }
-  20% {
-    background-image: url('./landing_images/img-2.jpg');
-    background-position: 100% 0; /* Move to the right */
-    opacity: 0; /* Fade out */
-  }
-  40% {
-    background-image: url('./landing_images/img-3.jpg');
-    background-position: 0 0; /* Start from the left */
-    opacity: 1; /* Fully visible */
-  }
-  60% {
-    background-image: url('./landing_images/img-4.jpg');
-    background-position: 100% 0; /* Move to the right */
-    opacity: 0; /* Fade out */
-  }
-  80% {
-    background-image: url('./landing_images/img-5.jpg');
-    background-position: 0 0; /* Start from the left */
-    opacity: 1; /* Fully visible */
-  }
-  100% {
-    background-image: url('./landing_images/img-1.jpg');
-    background-position: 100% 0; /* Move to the right */
-    opacity: 0; /* Fade out */
-  }
+/*Targets the root element and sets the backround image*/
+:root {
+  /*links baground image*/
+  background-image: url(./landing_images/pexels-frank-cone-140140-2347483.jpg);
+  /* Used if the image is unavailable */
+  background-color: #751a1a;
+  /* Resize the background image to cover the entire container */
+  background-size: cover;
+  /* Do not repeat the image */
+  background-repeat: no-repeat;
+  /*left align image*/
+  background-position: cover;
 }
 
-h2 {
+h1 {
+  color: #ffc422;
+  font-family: "Rock Salt", cursive;
+  font-weight: 400;
+  font-style: normal;
   text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-/* Required for dropdown autocomplete */
-.ui-autocomplete { 
-    cursor: pointer; 
-    height: 120px; 
-    overflow-y: scroll;
+  font-size: 600%;
 }
