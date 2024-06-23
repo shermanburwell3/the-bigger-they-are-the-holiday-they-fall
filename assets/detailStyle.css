@@ -1,0 +1,39 @@
+/*Global selector for the landing page*/
+* {
+  /*sets box sizing so the textinput fields will have a border*/
+  box-sizing: border-box;
+}
+
+/*Targets the root element and sets the backround image on the landing page*/
+:root {
+  /*Set backgroun color*/
+  background-color: #751a1a;
+}
+
+/*Targets the Back Button*/
+.button {
+  /*Sets Back Button background color*/
+  background-color: #ffc422;
+  /*No border around the button*/
+  border: none;
+  /*Sets font color*/
+  color: #751a1a;
+  /*Sets padding around button*/
+  padding: 15px 32px;
+  /**/
+  float: right;
+  /*Aligns button text center*/
+  text-align: center;
+  /*Removes all text-decoration from button*/
+  text-decoration: none;
+  /*Tells button text to display inline-block*/
+  display: inline-block;
+  /*Sets button font size*/
+  font-size: 16px;
+  /*Cursor is pointer when over button*/
+  cursor: pointer;
+  /*Sets font family using Google Font*/
+  font-family: "Rock Salt", cursive;
+  /*Makes font appear heavier in button*/
+  font-weight: 700;
+}
