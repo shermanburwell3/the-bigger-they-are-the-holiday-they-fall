@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*Global selector for the landing page*/
 * {
   /*sets box sizing so the textinput fields will have a border*/
