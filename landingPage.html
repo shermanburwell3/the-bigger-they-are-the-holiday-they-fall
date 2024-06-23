@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/landingPage.css">
     <title>Holiday They Fall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <header>
@@ -16,7 +18,34 @@
 
     <main>
         <!-- TODO: Create form using Tailwind-->
-    </main>
+         <div class="flex justify-center items-center h-screen">
+         <button id="openModal" class="bg-blue-500 text-white px-4 py-2 rounded font-bold">Discover A Holiday Near You!</button>
+    </div>
+   
+    <div id="modal" class="fixed inset-0 bg-gray-400 bg-opacity-50 hidden justify-center items-center">
+       <div class="flex justify-center items-center h-full w-full">
+        <div class="bg-whitte rounded-lg p-8 w-1/2 fade-in modal-content z-50">
+            <div class="mb-4">
+        <h2 class="text-xl font-bold">Find a Holiday</h2>
+            </div>
+            <form id="holidayForm">
+                <div class="mb-4">
+                <label for="country" class="block text-gray-700 text-sm font-bold mb-2">Select Country</label>
+                <input type="text" id="country" name="country" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div class="mb-4">
+                <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Select Date</label>
+                <input type="date" id="date" name="date" class="shadow appearancy-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div class="mt-7">
+        <button id="submitModal" class="bg-red-500 text-white px-4 py-2 rounded font-bold">Submit</button>
+                </div>
+             </form>
+             
+            </div>
+        </div>
+    </div>
+</main>
 
     <footer></footer>
 

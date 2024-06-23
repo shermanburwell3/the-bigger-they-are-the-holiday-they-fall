@@ -1,3 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*This code section is for the landing page slideshow*/
+ body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  animation: slideshow 35s infinite;
+  background-size: cover; /* Make the background image cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-position: center; /* Center the background image */
+}
+
+@keyframes slideshow {
+  0% {
+    background-image: url('./landing_images/img-1.jpg');
+    background-position: 0 0; /* Start from the left */
+    opacity: 1; /* Fully visible */
+  }
+  20% {
+    background-image: url('./landing_images/img-2.jpg');
+    background-position: 100% 0; /* Move to the right */
+    opacity: 0; /* Fade out */
+  }
+  40% {
+    background-image: url('./landing_images/img-3.jpg');
+    background-position: 0 0; /* Start from the left */
+    opacity: 1; /* Fully visible */
+  }
+  60% {
+    background-image: url('./landing_images/img-4.jpg');
+    background-position: 100% 0; /* Move to the right */
+    opacity: 0; /* Fade out */
+  }
+  80% {
+    background-image: url('./landing_images/img-5.jpg');
+    background-position: 0 0; /* Start from the left */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    background-image: url('./landing_images/img-1.jpg');
+    background-position: 100% 0; /* Move to the right */
+    opacity: 0; /* Fade out */
+  }
+}
+
+h2 {
 /*Global selector*/
 * {
   /*sets box sizing so the textinput fields will have a border*/
@@ -26,4 +75,5 @@ h1 {
   font-style: normal;
   text-align: center;
   font-size: 600%;
+}
 }
