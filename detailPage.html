@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/detailStyle.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/detailStyle.css" />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <!-- Back Button -->
+      <!-- Back Button -->
       <button class="button" id="backBtn">Back</button>
     </header>
 
-    <main></main>
+    <main>
+      <!--Side Panel for Search Form and List-->
+      <aside>
+        <!--Search Form-->
+        <section class="search-section">
+          <h2>Find Something New to Celebrate</h2>
+        </section>
+        <!--List Section-->
+        <section class="list-section">
+          <div>
+            <ul class="list-group" id="holidaysList"></ul>
+          </div>
+        </section>
+      </aside>
+      <!--Main Body for Display Section-->
+      <section class="holidaySection">
+        <!-- Selected Holiday-->
+        <div class="selectedHoliday" id="selectedHolidayDisplay"></div>
+        <!-- Weather Display -->
+        <div>
+          <h3>Weather Forecast:</h3>
+          <div class="weatherForecast" id="weatherForecastDisplay"></div>
+        </div>
+      </section>
+    </main>
 
     <footer></footer>
 
     <script src="/assets/detailPage.js"></script>
-</body>
+  </body>
 </html>

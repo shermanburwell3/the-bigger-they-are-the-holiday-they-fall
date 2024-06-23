@@ -37,6 +37,4 @@
 
 *   Landing Page background image: Cone, F. (July, 4 20212). Fireworks at Night. Retrieved from https://www.pexels.com/photo/fireworks-at-night-2347483/
 
-
-
 ## License
