@@ -558,12 +558,32 @@ video {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .inset-0 {
   inset: 0px;
 }
 
+.right-2 {
+  right: 0.5rem;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
+.right-1 {
+  right: 0.25rem;
+}
+
 .z-50 {
   z-index: 50;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mb-4 {
@@ -574,12 +594,12 @@ video {
   margin-top: 1.75rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .block {
   display: block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -588,10 +608,6 @@ video {
 
 .hidden {
   display: none;
-}
-
-.h-full {
-  height: 100%;
 }
 
 .h-screen {
@@ -647,12 +663,22 @@ video {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
 
 .p-8 {
   padding: 2rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .px-4 {
@@ -663,11 +689,6 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .text-sm {
@@ -688,14 +709,29 @@ video {
   line-height: 1.25;
 }
 
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-gray-700 {
+.text-blue-50 {
   --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
+  color: rgb(239 246 255 / var(--tw-text-opacity));
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .shadow {
@@ -704,99 +740,81 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-/*This code section is for the landing page slideshow*/
+.outline {
+  outline-style: solid;
+}
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  animation: slideshow 35s infinite;
+/*Global selector for the landing page*/
+
+* {
+  /*sets box sizing so the textinput fields will have a border*/
+  box-sizing: border-box;
+}
+
+/*Targets the root element and sets the backround image on the landing page*/
+
+:root {
+  /*links baground image*/
+  background-image: url(./landing_images/pexels-frank-cone-140140-2347483.jpg);
+  /* Used if the image is unavailable */
+  background-color: #751a1a;
+  /* Resize the background image to cover the entire container */
   background-size: cover;
-  /* Make the background image cover the entire viewport */
+  /* Do not repeat the image */
   background-repeat: no-repeat;
-  /* Prevent the background image from repeating */
-  background-position: center;
-  /* Center the background image */
+  /*left align image*/
+  background-position: cover;
 }
 
-@keyframes slideshow {
-  0% {
-    background-image: url('./landing_images/img-1.jpg');
-    background-position: 0 0;
-    /* Start from the left */
-    opacity: 1;
-    /* Fully visible */
-  }
+/*Targets the header element and sets styling for 'Festivitiy Finder'*/
 
-  20% {
-    background-image: url('./landing_images/img-2.jpg');
-    background-position: 100% 0;
-    /* Move to the right */
-    opacity: 0;
-    /* Fade out */
-  }
-
-  40% {
-    background-image: url('./landing_images/img-3.jpg');
-    background-position: 0 0;
-    /* Start from the left */
-    opacity: 1;
-    /* Fully visible */
-  }
-
-  60% {
-    background-image: url('./landing_images/img-4.jpg');
-    background-position: 100% 0;
-    /* Move to the right */
-    opacity: 0;
-    /* Fade out */
-  }
-
-  80% {
-    background-image: url('./landing_images/img-5.jpg');
-    background-position: 0 0;
-    /* Start from the left */
-    opacity: 1;
-    /* Fully visible */
-  }
-
-  100% {
-    background-image: url('./landing_images/img-1.jpg');
-    background-position: 100% 0;
-    /* Move to the right */
-    opacity: 0;
-    /* Fade out */
-  }
+h1 {
+  /*Sets font color*/
+  color: #ffc422;
+  /*Sets font family, pulled from Google fonts*/
+  font-family: "Rock Salt", cursive;
+  /*Sets font weight so it's slightly thinner than the original font*/
+  font-weight: 400;
+  /*Font style set to nomral*/
+  font-style: normal;
+  /*Centers font*/
+  text-align: center;
+  /*Sets font size*/
+  font-size: 600%;
 }
 
-h2 {
-  /*Global selector*/
-  * {
-    /*sets box sizing so the textinput fields will have a border*/
-    box-sizing: border-box;
-  }
-  /*Targets the root element and sets the backround image*/
-  :root {
-    /*links baground image*/
-    background-image: url(./landing_images/pexels-frank-cone-140140-2347483.jpg);
-    /* Used if the image is unavailable */
-    background-color: #751a1a;
-    /* Resize the background image to cover the entire container */
-    background-size: cover;
-    /* Do not repeat the image */
-    background-repeat: no-repeat;
-    /*left align image*/
-    background-position: cover;
-  }
-  /*Targets the header element and sets styling*/
-  h1 {
-    color: #ffc422;
-    font-family: "Rock Salt", cursive;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
-    font-size: 600%;
-  }
+/* Target the main container, centers object in container
+useful for form when ready*/
+
+.container {
+  /* Use Flexbox to center the button horizontally and align it near the bottom */
+  display: flex;
+  flex-direction: column;
+  /* Arrange items vertically */
+  justify-content: flex-end;
+  /* Align items to the bottom */
+  align-items: center;
+  /* Center horizontally */
+  height: 100vh;
+  /* Make the container full height of the viewport */
+}
+
+/*Code for temporary button, remove when form created*/
+
+.button {
+  background-color: #ffc422;
+  border: none;
+  color: #751a1a;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Rock Salt", cursive;
+  font-weight: 700;
+  margin-bottom: 20px;
+  /* Add some space between the button and the bottom of the page*/
 }
 
 .focus\:outline-none:focus {
