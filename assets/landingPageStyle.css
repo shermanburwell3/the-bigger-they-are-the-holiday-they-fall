@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Global selector for the landing page*/
+* {
+  /*sets box sizing so the textinput fields will have a border*/
+  box-sizing: border-box;
+}
+
+/*Targets the root element and sets the backround image on the landing page*/
+:root {
+  /*links baground image*/
+  background-image: url(./landing_images/pexels-frank-cone-140140-2347483.jpg);
+  /* Used if the image is unavailable */
+  background-color: #751a1a;
+  /* Resize the background image to cover the entire container */
+  background-size: cover;
+  /* Do not repeat the image */
+  background-repeat: no-repeat;
+  /*left align image*/
+  background-position: cover;
+}
+
+/*Targets the header element and sets styling for 'Festivitiy Finder'*/
+h1 {
+  /*Sets font color*/
+  color: #ffc422;
+  /*Sets font family, pulled from Google fonts*/
+  font-family: "Rock Salt", cursive;
+  /*Sets font weight so it's slightly thinner than the original font*/
+  font-weight: 400;
+  /*Font style set to nomral*/
+  font-style: normal;
+  /*Centers font*/
+  text-align: center;
+  /*Sets font size*/
+  font-size: 600%;
+}
+
+/* Target the main container, centers object in container
+useful for form when ready*/
+.container {
+  /* Use Flexbox to center the button horizontally and align it near the bottom */
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: flex-end; /* Align items to the bottom */
+  align-items: center; /* Center horizontally */
+  height: 100vh; /* Make the container full height of the viewport */
+}
+
+/*Code for temporary button, remove when form created*/
+.button {
+  background-color: #ffc422;
+  border: none;
+  color: #751a1a;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Rock Salt", cursive;
+  font-weight: 700;
+  margin-bottom: 20px; /* Add some space between the button and the bottom of the page*/
+}
