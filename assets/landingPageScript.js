@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const openModalBtn = document.getElementById("openModal");
   const closeModalBtn = document.getElementById("closeModal");
@@ -13,15 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.add("hidden");
   });
 
-document.getElementById('holidayForm').addEventListener('submit', (event) => {
-  event.preventDefault();
-  console.log('Form Submitted');
- modal.classList.add("hidden");
-})
-  
-window.addEventListener('click', (event) => {
-  if (event.target === modal) {
+  document.getElementById("holidayForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("Form Submitted");
     modal.classList.add("hidden");
-  }
-})
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.classList.add("hidden");
+    }
+  });
 });
