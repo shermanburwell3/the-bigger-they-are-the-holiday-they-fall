@@ -31,8 +31,8 @@ const countries = [];
 
 for (let i = 0; i < countryObjects.length; i++) {
 
-    countries.push(countryObjects);
-    
+    countries.push(countryObjects[i].countryName);
+
 }
 
 console.log(countries);
