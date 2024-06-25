@@ -42,18 +42,22 @@ const countriesSorted = countries.sort();
 
 console.log(countriesSorted);
 
+
 $('#country').autocomplete({
     source: countriesSorted,
     minLength: 0,
-    scroll: true
-}).focus(function() {
+    scroll: true,
+  })
+  .focus(function () {
     $(this).autocomplete("search", "");
-});
+  });
 
-$('#months-menu').autocomplete({
+$("#months-menu")
+  .autocomplete({
     source: months,
     minLength: 0,
-    scroll: true
-}).focus(function() {
+    scroll: true,
+  })
+  .focus(function () {
     $(this).autocomplete("search", "");
-});
+  });

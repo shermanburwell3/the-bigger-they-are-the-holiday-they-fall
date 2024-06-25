@@ -38,29 +38,45 @@ h1 {
   font-size: 600%;
 }
 
-/* Target the main container, centers object in container
+/*Target the main container, centers object in container
 useful for form when ready*/
 .container {
-  /* Use Flexbox to center the button horizontally and align it near the bottom */
+  /*Use Flexbox to center the button horizontally and align it near the bottom*/
   display: flex;
-  flex-direction: column; /* Arrange items vertically */
-  justify-content: flex-end; /* Align items to the bottom */
-  align-items: center; /* Center horizontally */
-  height: 100vh; /* Make the container full height of the viewport */
+  /*Arrange items vertically*/
+  flex-direction: column;
+  /*Align items to the bottom*/
+  justify-content: flex-end;
+  /*Center horizontally*/
+  align-items: center;
+  /*Make the container full height of the viewport*/
+  height: 100vh;
 }
 
 /*Code for temporary button, remove when form created*/
 .button {
+  /*Sets button backgroun color*/
   background-color: #ffc422;
+  /*Removes border*/
   border: none;
+  /*Sets font color*/
   color: #751a1a;
+  /*Sets padding around button word*/
   padding: 15px 32px;
+  /*Aligns button content center*/
   text-align: center;
+  /*Removes text decoration*/
   text-decoration: none;
+  /*Displays items inline-block*/
   display: inline-block;
+  /*Sets font size to 16px*/
   font-size: 16px;
+  /*Make cursor pointer*/
   cursor: pointer;
+  /*Set font from Google fonts*/
   font-family: "Rock Salt", cursive;
+  /*Set font weight so it looks bolder*/
   font-weight: 700;
-  margin-bottom: 20px; /* Add some space between the button and the bottom of the page*/
+  /*Add some space between the button and the bottom of the page*/
+  margin-bottom: 20px;
 }
