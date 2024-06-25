@@ -18,8 +18,9 @@ document.getElementById('holidayForm').addEventListener('submit', (event) => {
 
   // for loop to grab the object of the country and pass it to the next page via local storage
   for (let i = 0; i < countryObjects.length; i++) {
+    console.log(countryObjects[i]);
     if (countryObjects[i].countryName == document.getElementById('country').value) {
-      localStorage.setItem('country', countryObjects[i]);
+      localStorage.setItem('country', JSON.stringify(countryObjects[i]));
     }
   }
 

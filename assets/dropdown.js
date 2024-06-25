@@ -27,6 +27,8 @@ const countryObjects = [{countryName: 'France'},
     {countryName: 'Japan'}
 ];
 
+console.log(countryObjects);
+
 const countries = [];
 
 for (let i = 0; i < countryObjects.length; i++) {
