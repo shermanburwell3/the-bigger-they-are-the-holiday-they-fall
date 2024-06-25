@@ -7,8 +7,9 @@
       href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/0ed3b359b7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/detailStyle.css" />
-    <title>Document</title>
+    <title>Holiday Details</title>
   </head>
   <body>
     <header>
@@ -33,7 +34,12 @@
       <!--Main Body for Display Section-->
       <section class="holidaySection">
         <!-- Selected Holiday-->
-        <div class="selectedHoliday" id="selectedHolidayDisplay"></div>
+        <div class="selectedHoliday" id="selectedHolidayDisplay">
+          <p>On date in location is celebrating holiday</p>
+          <button class="heartButton" onclick="toggleColor(this)">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
         <!-- Weather Display -->
         <div>
           <h3>Weather Forecast:</h3>
