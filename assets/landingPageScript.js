@@ -15,8 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById('holidayForm').addEventListener('submit', (event) => {
   event.preventDefault();
+  localStorage.setItem('country', document.getElementById('#country'));
+  // localStorage.setItem('month', document.getElementById('month'));
   console.log('Form Submitted');
  modal.classList.add("hidden");
+ window.location.href = './detailPage.html';
 })
   
 window.addEventListener('click', (event) => {
