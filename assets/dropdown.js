@@ -14,18 +14,20 @@ const months = ['January',
 
 
 
-const countryObjects = [{countryName: 'France'},
-    {countryName: 'Spain'},
-    {countryName: 'United States'},
-    {countryName: 'Turkey'},
-    {countryName: 'Italy'},
-    {countryName: 'Mexico'},
-    {countryName: 'United Kingdom'},
-    {countryName: 'Germany'},
-    {countryName: 'Greece'},
-    {countryName: 'Austria'},
-    {countryName: 'Japan'}
+const countryObjects = [{countryName: 'France', countryCode: FR},
+    {countryName: 'Spain', countryCode: 'ES'},
+    {countryName: 'United States', countryCode: 'US', cities: ["New York City", "Miami", "Los Angeles"], states: ["NY", "FL", "CA"]},
+    {countryName: 'Turkey', countryCode: 'TR'},
+    {countryName: 'Italy', countryCode: 'IT'},
+    {countryName: 'Mexico', countryCode: 'MX'},
+    {countryName: 'United Kingdom', countryCode: 'GB'},
+    {countryName: 'Germany', countryCode: 'DE'},
+    {countryName: 'Greece', countryCode: 'GR'},
+    {countryName: 'Austria', countryCode: 'AT'},
+    {countryName: 'Japan', countryCode: 'JP'}
 ];
+
+console.log(countryObjects);
 
 const countries = [];
 
@@ -39,6 +41,7 @@ console.log(countries);
 const countriesSorted = countries.sort();
 
 console.log(countriesSorted);
+
 
 $('#country').autocomplete({
     source: countriesSorted,
