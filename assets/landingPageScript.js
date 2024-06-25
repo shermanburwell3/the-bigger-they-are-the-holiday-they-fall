@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById('holidayForm').addEventListener('submit', (event) => {
   event.preventDefault();
-  localStorage.setItem('country', document.getElementById('#country'));
+  localStorage.setItem('country', document.getElementById('#country').textContent);
   // localStorage.setItem('month', document.getElementById('month'));
   console.log('Form Submitted');
  modal.classList.add("hidden");
