@@ -1,39 +1,46 @@
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+const months = ['January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'];
+
+
+
+
+const countryObjects = [{countryName: 'France'},
+    {countryName: 'Spain'},
+    {countryName: 'United States'},
+    {countryName: 'Turkey'},
+    {countryName: 'Italy'},
+    {countryName: 'Mexico'},
+    {countryName: 'United Kingdom'},
+    {countryName: 'Germany'},
+    {countryName: 'Greece'},
+    {countryName: 'Austria'},
+    {countryName: 'Japan'}
 ];
 
-const countries = [
-  "France",
-  "Spain",
-  "United States",
-  "Turkey",
-  "Italy",
-  "Mexico",
-  "United Kingdom",
-  "Germany",
-  "Greece",
-  "Austria",
-  "Japan",
-];
+const countries = [];
+
+for (let i = 0; i < countryObjects.length; i++) {
+
+    countries.push(countryObjects[i].countryName);
+
+}
 
 console.log(countries);
 const countriesSorted = countries.sort();
 
 console.log(countriesSorted);
 
-$("#countries-menu")
-  .autocomplete({
+$('#country').autocomplete({
     source: countriesSorted,
     minLength: 0,
     scroll: true,
