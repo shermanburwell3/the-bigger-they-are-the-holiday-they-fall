@@ -15,7 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById('holidayForm').addEventListener('submit', (event) => {
   event.preventDefault();
-  localStorage.setItem('country', document.getElementById('country').value);
+
+  // for loop to grab the object of the country and pass it to the next page via local storage
+  for (let i = 0; i < countryObjects.length; i++) {
+    if (countryObjects[i].countryName == document.getElementById('country').value) {
+      localStorage.setItem('country', countryObjects[i]);
+    }
+  }
+
   // localStorage.setItem('month', document.getElementById('month'));
   console.log('Form Submitted');
  modal.classList.add("hidden");
