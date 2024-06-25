@@ -92,12 +92,35 @@ aside {
   flex: 70%;
   /*Sets a 5px margin around the cards section class*/
   margin: 5px;
+  /*Sets selectedHoliday class and weatherForecast to display flex*/
+  display: flex;
+  flex-direction: column;
+  font-size: 200%;
+}
+
+/*Targets heart icon*/
+.heartButton {
+  /* Create an outline effect with yellow color */
+  text-shadow: -1px 0 #ffc422, 0 1px #ffc422, 1px 0 #ffc422, 0 -1px #ffc422;
+  background: none;
+  color: #19374a;
+  border: none;
+  padding: 0;
+  font-size: 200%;
+}
+
+.heartButton.clicked {
+  /* Change the color of the heart icon when clicked */
+  color: #FFC422;
 }
 
 /*Targest the card-today class*/
 .selectedHoliday {
   /*Sets the card-today class to 30% of the cards-section height at most*/
   height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 /*Targest the card-future class*/
