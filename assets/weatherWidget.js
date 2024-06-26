@@ -63,16 +63,16 @@ function createCards(weatherData, city){
 
     const weatherCard = document.createElement('div');
     const cityEl = document.createElement('h3');
-    const temperatureEl = document.createElement('p');
+    const highTemperatureEl = document.createElement('p');
+    const lowTemperatureEl = document.createElement('p');
     const maxWindEl = document.createElement('p');
 
     // Assign data into the elements
 
     cityEl.textContent = city;
 
-    temperatureEl.textContent =
-    `High Temp: ${Math.round(weatherData.temperature.max)} F
-    Low Temp: ${Math.round(weatherData.temperature.min)} F`
+    highTemperatureEl.textContent =`High Temp: ${Math.round(weatherData.temperature.max)} F`
+    lowTemperatureEl.textContent = `Low Temp: ${Math.round(weatherData.temperature.min)} F`
 
 
     maxWindEl.textContent = `Max Wind Speed: ${Math.round(weatherData.wind.max.speed)} MPH`;
@@ -80,7 +80,8 @@ function createCards(weatherData, city){
     // Finally, append the cards to the widget
 
     weatherCard.append(cityEl);
-    weatherCard.append(temperatureEl);
+    weatherCard.append(highTemperatureEl);
+    weatherCard.append(lowTemperatureEl);
     weatherCard.append(maxWindEl);
 
     weatherDisplayEl.append(weatherCard);
