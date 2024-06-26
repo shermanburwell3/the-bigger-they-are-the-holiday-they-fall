@@ -19,12 +19,12 @@ const countryObjects = [{countryName: 'France', countryCode: 'FR', cities: ['Par
     {countryName: 'United States', countryCode: 'US', cities: ['New York City', 'Miami', 'Los Angeles'], states: ['NY', 'FL', 'CA']},
     {countryName: 'Turkey', countryCode: 'TR', cities: ['Istanbul', 'Antalya', 'Izmir']},
     {countryName: 'Italy', countryCode: 'IT', cities: ['Rome', 'Florence', 'Venice']},
-    {countryName: 'Mexico', countryCode: 'MX', cities: []},
-    {countryName: 'United Kingdom', countryCode: 'GB', cities: []},
-    {countryName: 'Germany', countryCode: 'DE', cities: []},
-    {countryName: 'Greece', countryCode: 'GR', cities: []},
-    {countryName: 'Austria', countryCode: 'AT', cities: []},
-    {countryName: 'Japan', countryCode: 'JP', cities: []}
+    {countryName: 'Mexico', countryCode: 'MX', cities: ['Mexico City', 'Cancun', 'Oaxaca']},
+    {countryName: 'United Kingdom', countryCode: 'GB', cities: ['London', 'Edinburgh', 'Manchester']},
+    {countryName: 'Germany', countryCode: 'DE', cities: ['Berlin', 'Munich', 'Hamburg']},
+    {countryName: 'Greece', countryCode: 'GR', cities: ['Athens', 'Thessaloniki', 'Chania']},
+    {countryName: 'Austria', countryCode: 'AT', cities: ['Vienna', 'Salzburg', 'Innsbruck']},
+    {countryName: 'Japan', countryCode: 'JP', cities: ['Tokyo', 'Kyoto', 'Osaka']}
 ];
 
 console.log(countryObjects);
