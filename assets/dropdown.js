@@ -14,7 +14,7 @@ const months = ['January',
 
 
 
-const countryObjects = [{countryName: 'France', countryCode: FR},
+const countryObjects = [{countryName: 'France', countryCode: 'FR'},
     {countryName: 'Spain', countryCode: 'ES'},
     {countryName: 'United States', countryCode: 'US', cities: ["New York City", "Miami", "Los Angeles"], states: ["NY", "FL", "CA"]},
     {countryName: 'Turkey', countryCode: 'TR'},
