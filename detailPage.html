@@ -7,7 +7,10 @@
       href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/0ed3b359b7.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/0ed3b359b7.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="assets/detailStyle.css" />
     <title>Holiday Details</title>
   </head>
@@ -23,6 +26,20 @@
         <!--Search Form-->
         <section class="search-section">
           <h2>Find Something New to Celebrate</h2>
+          <form id="holidayForm">
+                <div class="mb-4">
+                <label for="country" class="block text-gray-700 text-sm font-bold mb-2">Select Country</label>
+                <input type="text" id="country" name="country" class="shadow appearance-auto border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" required>
+                  <div id="dropdownSearch" class="absolute z-10 bg-custom-white rounded-lg shadow w-full hidden">
+                </div>
+                <div class="mb-4">
+                <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Select Date</label>
+                <input type="date" id="date" name="date" class="shadow appearancy-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div class="mt-7">
+                  <button type="submit" id="searchButton" class="bg-custom-red text-white px-4 py-2 rounded font-bold">Search</button>
+                </div>
+             </form>
         </section>
         <!--List Section-->
         <section class="list-section">
@@ -35,7 +52,10 @@
       <section class="holidaySection">
         <!-- Selected Holiday-->
         <div class="selectedHoliday" id="selectedHolidayDisplay">
-          <p>On date in location is celebrating holiday</p>
+          <p>
+            In <span id="holidayCountry"></span> on
+            <span id="holidayDate"></span> it is <span id="holidayName"></span>!
+          </p>
           <button class="heartButton" onclick="toggleColor(this)">
             <i class="fas fa-heart"></i>
           </button>
@@ -52,5 +72,6 @@
 
     <script src="/assets/detailPage.js"></script>
     <script src="./assets/weatherWidget.js"></script>
-</body>
+    <script src="./assets/dropdown.js"></script>
+  </body>
 </html>
