@@ -26,6 +26,20 @@
         <!--Search Form-->
         <section class="search-section">
           <h2>Find Something New to Celebrate</h2>
+          <form id="holidayForm">
+                <div class="mb-4">
+                <label for="country" class="block text-gray-700 text-sm font-bold mb-2">Select Country</label>
+                <input type="text" id="country" name="country" class="shadow appearance-auto border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" required>
+                  <div id="dropdownSearch" class="absolute z-10 bg-custom-white rounded-lg shadow w-full hidden">
+                </div>
+                <div class="mb-4">
+                <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Select Date</label>
+                <input type="date" id="date" name="date" class="shadow appearancy-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div class="mt-7">
+                  <button type="submit" id="searchButton" class="bg-custom-red text-white px-4 py-2 rounded font-bold">Search</button>
+                </div>
+             </form>
         </section>
         <!--List Section-->
         <section class="list-section">
@@ -58,5 +72,6 @@
 
     <script src="/assets/detailPage.js"></script>
     <script src="./assets/weatherWidget.js"></script>
+    <script src="./assets/dropdown.js"></script>
   </body>
 </html>
