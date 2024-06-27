@@ -7,7 +7,10 @@
       href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/0ed3b359b7.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/0ed3b359b7.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="assets/detailStyle.css" />
     <title>Holiday Details</title>
   </head>
@@ -35,7 +38,10 @@
       <section class="holidaySection">
         <!-- Selected Holiday-->
         <div class="selectedHoliday" id="selectedHolidayDisplay">
-          <p>On date in location is celebrating holiday</p>
+          <p>
+            In <span id="holidayCountry"></span> on
+            <span id="holidayDate"></span> it is <span id="holidayName"></span>!
+          </p>
           <button class="heartButton" onclick="toggleColor(this)">
             <i class="fas fa-heart"></i>
           </button>
@@ -52,5 +58,5 @@
 
     <script src="/assets/detailPage.js"></script>
     <script src="./assets/weatherWidget.js"></script>
-</body>
+  </body>
 </html>
