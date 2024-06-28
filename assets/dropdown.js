@@ -1,19 +1,4 @@
-const months = ['January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'];
-
-
-
-
+// List of countries for the dropdown
 const countryObjects = [{countryName: 'France', countryCode: 'FR', cities: ['Paris', 'Lyon', 'Bordeaux']},
     {countryName: 'Spain', countryCode: 'ES', cities: ['Madrid', 'Barcelona', 'Seville']},
     {countryName: 'United States', countryCode: 'US', cities: ['New York City', 'Miami', 'Los Angeles'], states: ['NY', 'FL', 'CA']},
@@ -27,8 +12,6 @@ const countryObjects = [{countryName: 'France', countryCode: 'FR', cities: ['Par
     {countryName: 'Japan', countryCode: 'JP', cities: ['Tokyo', 'Kyoto', 'Osaka']}
 ];
 
-console.log(countryObjects);
-
 const countries = [];
 
 for (let i = 0; i < countryObjects.length; i++) {
@@ -37,24 +20,12 @@ for (let i = 0; i < countryObjects.length; i++) {
 
 }
 
-console.log(countries);
+// Sort countries to be in alphabetical order
 const countriesSorted = countries.sort();
 
-console.log(countriesSorted);
-
-
+// Autocomplete/dropdown widget
 $('#country').autocomplete({
     source: countriesSorted,
-    minLength: 0,
-    scroll: true,
-  })
-  .focus(function () {
-    $(this).autocomplete("search", "");
-  });
-
-$("#months-menu")
-  .autocomplete({
-    source: months,
     minLength: 0,
     scroll: true,
   })
