@@ -199,6 +199,8 @@ h3 {
   height: 70%;  
   /*Removes any margin around the cards section class*/
   margin: 0;
+
+  background-color: var();
 }
 
 /*Target the footer section*/

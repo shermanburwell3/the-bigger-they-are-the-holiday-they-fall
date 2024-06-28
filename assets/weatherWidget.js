@@ -39,6 +39,29 @@ if (countryObject.countryCode == 'US') {
     }
 }
 
+else if (countryObject.countryCode != 'US') {
+
+    // If it is NOT, run the query without a state code
+
+    for (let i = 0; i < countryObject.cities.length; i++) {
+
+        let cityName = countryObject.cities[i];
+        const countryCode = countryObject.countryCode;
+
+        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&appid=${apiKey}`)
+            .then(function (response) {
+                return response.json()
+            })
+                .then(function (data) {
+                    // Assign global lat and lon the first lat and lon result of each search
+                    lat.push(data[0].lat);
+                    lon.push(data[0].lon);
+                    // Pass our current index into getWeather function to use on the lat and lon arrays later
+                    getWeather(i);
+                })
+    }
+}
+
 // Get weather data using lat and lon
 function getWeather(index) {
     
