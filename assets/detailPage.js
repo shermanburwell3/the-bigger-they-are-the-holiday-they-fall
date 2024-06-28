@@ -1,12 +1,14 @@
-// Wait for the DOM content to be fully loaded before executing the code
 document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve myFavorites from localStorage or initialize as an empty array
+  let favList = JSON.parse(localStorage.getItem("myFavorites")) || [];
   // Get the back button element by its ID
   const backBtn = document.getElementById("backBtn");
-
   // Check if the back button exists
   if (backBtn) {
+
     // Add a click event listener to the back button
     backBtn.addEventListener("click", () => {
+
       // Redirect the user to the index.html page when the back button is clicked
       window.location.href = "index.html";
     });
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Check if holidayInfo exists
   if (holidayInfo) {
+
     // Parse the date stored in holidayInfo, add one day to it, and format it back to a readable string
     const date = new Date(holidayInfo.date);
     date.setDate(date.getDate() + 1); // Add one day
@@ -36,6 +39,49 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("holidayCountry").textContent =
       holidayInfo.countryName;
   }
+
+  // Get the heart button element by its class
+  const heartBtn = document.querySelector(".heartButton");
+
+  // Add a click event listener to the heart button
+  heartBtn.addEventListener("click", () => {
+
+    // Check if the new favorite already exists in favList
+    const isDuplicate = favList.some(
+      (favorite) =>
+        favorite.countryName === holidayInfo.countryName &&
+        favorite.date === holidayInfo.date &&
+        favorite.name === holidayInfo.name
+    );
+    // If it's not a duplicate, add it to favList and localStorage
+    if (!isDuplicate) {
+      const newFavorite = {
+        countryName: holidayInfo.countryName,
+        date: holidayInfo.date,
+        name: holidayInfo.name,
+      };
+      favList.push(newFavorite);
+      localStorage.setItem("myFavorites", JSON.stringify(favList));
+
+      // Display the new favorite in the list-group
+      displayFavorites();
+    }
+  });
+  // Function to display favorites in the list-group
+  function displayFavorites() {
+    const listGroup = document.querySelector(".list-group");
+    listGroup.innerHTML = ""; // Clear the existing list items
+
+    // Iterate over each favorite and create a list item to display it
+    favList.forEach((favorite) => {
+      const listItem = document.createElement("button");
+      listItem.textContent = `${favorite.countryName} - ${favorite.date} - ${favorite.name}`;
+      listGroup.appendChild(listItem);
+    });
+  }
+
+  // Display existing favorites on page load
+  displayFavorites();
 });
 
 // Function to toggle the CSS class "clicked" on a button element

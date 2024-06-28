@@ -140,6 +140,26 @@ aside {
   font-size: 30px;
 }
 
+/*Targets buttons in the list-group class*/
+.list-group button {
+  /*Sets background color to red gray variable*/
+  background-color: var(--redAC);
+  /*Sets font color to white variable*/
+  color: var(--whiteAC);
+  /*Aligns text content in the center of each item*/
+  text-align: center;
+  /*Sets font size to 24px*/
+  font-size: 24px;
+  /*Sets a 1% margin top/bottom 10px margin left/right of the list items*/
+  margin: 1% 0;
+  /*Makes cursor into a grabby hand when hovering over the city icons*/
+  cursor: grab;
+  /*Tells button to inherit font-family*/
+  font-family: inherit;
+  /*Sets the width*/
+  width: 100%;
+}
+
 /*Target the holidaySection class*/
 .holidaySection {
   /*Sets the cards section to occupy 70% of the width of its parent element*/
