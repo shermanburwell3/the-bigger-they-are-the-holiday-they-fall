@@ -3,16 +3,11 @@
 const apiKey = '0c1d7915ad2662f0e450b432130b6989';
 const countryObject = JSON.parse(localStorage.getItem('country'));
 
-// const weatherQuery = `https://api.openweathermap.org/data/3.0/onecall/day_summary?&appid=${apiKey}`;
-// const geoQuery = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&appid=${apiKey}`;
-
 // Declare arrays for lat and lon glabally
 const lat = [];
 const lon = [];
 
-
 date = localStorage.getItem('weatherDate');
-// All of the following may be inside of a for loop in order to run the code three times on page load
 
 // Check if country is United States
 if (countryObject.countryCode == 'US') {
@@ -34,8 +29,9 @@ if (countryObject.countryCode == 'US') {
                     lat.push(data[0].lat);
                     lon.push(data[0].lon);
                     // Pass our current index into getWeather function to use on the lat and lon arrays later
-                    getWeather(i);
+                    
                 })
+                    .then(getWeather(i))
     }
 }
 
@@ -70,7 +66,6 @@ function getWeather(index) {
             return response.json();
         })
             .then(function(data) {
-                console.log(data);
 
                 createCards(data, countryObject.cities[index]);
                 
