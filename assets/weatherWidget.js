@@ -1,3 +1,5 @@
+// API Key and country object
+
 const apiKey = '0c1d7915ad2662f0e450b432130b6989';
 const countryObject = JSON.parse(localStorage.getItem('country'));
 
@@ -9,7 +11,7 @@ const lat = [];
 const lon = [];
 
 
-date = '2025-12-10' //Placeholder until we can get the date from the holiday api
+date = localStorage.getItem('weatherDate');
 // All of the following may be inside of a for loop in order to run the code three times on page load
 
 // Check if country is United States
