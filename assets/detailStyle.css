@@ -196,11 +196,27 @@ h3 {
 /*Target the weatherForecast class*/
 .weatherForecast {
   /*Sets the height of the card-future class to 70% of the height of the cards-section*/
-  height: 70%;  
+  height: 75%;  
   /*Removes any margin around the cards section class*/
   margin: 0;
 
-  background-color: var();
+  padding-left: 25px;
+  padding-right: 25px;
+
+  font-size: 16px;
+
+  background-color: var(--redAC);
+}
+
+.weatherForecast div {
+
+  border-style: solid;
+  border-color: var(--whiteAC);
+}
+
+.weatherForecast p {
+  margin-left: 5px;;
+  font-size: 12px;
 }
 
 /*Target the footer section*/
