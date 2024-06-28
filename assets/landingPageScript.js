@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const targetDate = new Date(date);
 
     // Store the selected date in local storage under the key "weatherDate"
-    localStorage.setItem("weatherDate", date);
 
     // Find the country code based on the selected country name
     let countryCode = "";
@@ -84,6 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // If a closest future holiday is found, store its information and redirect to detail page
         if (closestHoliday) {
+          localStorage.setItem('weatherDate', closestHoliday.date);
+      
           const holidayInfo = {
             name: closestHoliday.name,
             date: new Date(closestHoliday.date).toLocaleDateString("en-US", {
