@@ -32,6 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const year = new Date(date).getFullYear();
     const targetDate = new Date(date);
 
+    // Store the selected date in local storage under the key "weatherDate"
+    localStorage.setItem("weatherDate", date);
+
     // Find the country code based on the selected country name
     let countryCode = "";
     for (let i = 0; i < countryObjects.length; i++) {
