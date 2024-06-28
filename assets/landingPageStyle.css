@@ -80,3 +80,12 @@ useful for form when ready*/
   /*Add some space between the button and the bottom of the page*/
   margin-bottom: 20px;
 }
+
+/* Dropdown */
+.ui-autocomplete { 
+  cursor: pointer; 
+  height: 120px; 
+  overflow-y: scroll;
+  background-color: white;
+  max-width: 200px;
+}
