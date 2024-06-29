@@ -26,12 +26,15 @@ if (countryObject.countryCode == 'US') {
             })
                 .then(function (data) {
                     // Assign global lat and lon the first lat and lon result of each search
-                    lat.push(data[0].lat);
-                    lon.push(data[0].lon);
-                    // Pass our current index into getWeather function to use on the lat and lon arrays later
+                    // While loop ensures that a value gets passed in lat and lon
+                    while ((!lat[i]) && (!lon[i])) {
+                        lat.push(data[0].lat);
+                        lon.push(data[0].lon);
+                    }
                     
+                    // Pass our current index into getWeather function to use on the lat and lon arrays later
+                    getWeather(i);
                 })
-                    .then(getWeather(i))
     }
 }
 
@@ -50,8 +53,11 @@ else if (countryObject.countryCode != 'US') {
             })
                 .then(function (data) {
                     // Assign global lat and lon the first lat and lon result of each search
-                    lat.push(data[0].lat);
-                    lon.push(data[0].lon);
+                    // While loop ensures that a value gets passed in lat and lon
+                    while ((!lat[i]) && (!lon[i])) {
+                        lat.push(data[0].lat);
+                        lon.push(data[0].lon);
+                    }
                     // Pass our current index into getWeather function to use on the lat and lon arrays later
                     getWeather(i);
                 })
