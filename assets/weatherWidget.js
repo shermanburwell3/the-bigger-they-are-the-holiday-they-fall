@@ -29,9 +29,8 @@ if (countryObject.countryCode == 'US') {
                     lat.push(data[0].lat);
                     lon.push(data[0].lon);
                     // Pass our current index into getWeather function to use on the lat and lon arrays later
-                    
+                    getWeather(i)
                 })
-                    .then(getWeather(i))
     }
 }
 
