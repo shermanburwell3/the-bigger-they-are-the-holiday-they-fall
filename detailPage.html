@@ -25,8 +25,8 @@
       <aside>
         <!--Search Form-->
         <section class="search-section">
-          <h2>Find Something New to Celebrate</h2>
-          <form id="holidayForm">
+          <h2>Find Something New to Celebrate!</h2>
+          <form class="searchHoliday" id="holidayForm">
                 <div class="mb-4">
                 <label for="country" class="block text-gray-700 text-sm font-bold mb-2">Select Country</label>
                 <input type="text" id="country" name="country" class="shadow appearance-auto border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" required>
@@ -44,6 +44,7 @@
         <!--List Section-->
         <section class="list-section">
           <div>
+            <p>Favorite Holidays</p>
             <ul class="list-group"></ul>
           </div>
         </section>
@@ -53,22 +54,24 @@
         <!-- Selected Holiday-->
         <div class="selectedHoliday" id="selectedHolidayDisplay">
           <p>
-            In <span id="holidayCountry"></span> on
-            <span id="holidayDate"></span> it is <span id="holidayName"></span>!
+            On <span id="holidayDate"></span>, <span id="holidayCountry"></span> 
+            celebrates <span id="holidayName"></span>.
           </p>
           <button class="heartButton" onclick="toggleColor(this)">
             <i class="fas fa-heart"></i>
           </button>
         </div>
         <!-- Weather Display -->
-        <div>
+        <div class="section2">
           <h3>Weather Forecast:</h3>
           <div class="weatherForecast" id="weatherForecastDisplay"></div>
         </div>
       </section>
     </main>
 
-    <footer></footer>
+    <footer>
+      <p>❤️️ please enjoy your holiday ❤️️</p>
+    </footer>
 
     <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"
