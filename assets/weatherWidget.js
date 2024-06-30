@@ -7,7 +7,7 @@ let countryObject = JSON.parse(localStorage.getItem('country'));
 const lat = [];
 const lon = [];
 
-    function weatherWidget() {
+function weatherWidget() {
     countryObject = JSON.parse(localStorage.getItem('country'));
     date = localStorage.getItem('weatherDate');
 
@@ -28,10 +28,11 @@ const lon = [];
                 })
                     .then(function (data) {
                         // Assign global lat and lon the first lat and lon result of each search
-                        lat.push(data[0].lat);
-                        lon.push(data[0].lon);
-                        // Pass our current index into getWeather function to use on the lat and lon arrays later
-                        
+                        while ((!lat[i]) && !(lon[i])) {
+                            lat.push(data[0].lat);
+                            lon.push(data[0].lon);
+                            // Pass our current index into getWeather function to use on the lat and lon arrays later
+                        }
                     })
                         .then(getWeather(i))
         }
@@ -52,9 +53,11 @@ const lon = [];
                 })
                     .then(function (data) {
                         // Assign global lat and lon the first lat and lon result of each search
-                        lat.push(data[0].lat);
-                        lon.push(data[0].lon);
-                        // Pass our current index into getWeather function to use on the lat and lon arrays later
+                        while ((!lat[i]) && !(lon[i])) {
+                            lat.push(data[0].lat);
+                            lon.push(data[0].lon);
+                            // Pass our current index into getWeather function to use on the lat and lon arrays later
+                        }
                         getWeather(i);
                     })
         }
