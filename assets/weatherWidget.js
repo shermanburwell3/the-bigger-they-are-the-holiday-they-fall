@@ -1,66 +1,63 @@
 // API Key and country object
 
 const apiKey = '0c1d7915ad2662f0e450b432130b6989';
-const countryObject = JSON.parse(localStorage.getItem('country'));
+let countryObject = JSON.parse(localStorage.getItem('country'));
 
 // Declare arrays for lat and lon glabally
 const lat = [];
 const lon = [];
 
-date = localStorage.getItem('weatherDate');
+    function weatherWidget() {
+    countryObject = JSON.parse(localStorage.getItem('country'));
+    date = localStorage.getItem('weatherDate');
 
-// Check if country is United States
-if (countryObject.countryCode == 'US') {
+    // Check if country is United States
+    if (countryObject.countryCode == 'US') {
 
-    // If it is, run a query with state code to get lat and lon
+        // If it is, run a query with state code to get lat and lon
 
-    for (let i = 0; i < countryObject.cities.length; i++) {
+        for (let i = 0; i < countryObject.cities.length; i++) {
 
-        let cityName = countryObject.cities[i];
-        let stateCode = countryObject.states[i];
-        const countryCode = countryObject.countryCode;
+            let cityName = countryObject.cities[i];
+            let stateCode = countryObject.states[i];
+            const countryCode = countryObject.countryCode;
 
-        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&appid=${apiKey}`)
-            .then(function (response) {
-                return response.json()
-            })
-                .then(function (data) {
-                    // Assign global lat and lon the first lat and lon result of each search
-                    // While loop ensures that a value gets passed in lat and lon
-                    while ((!lat[i]) && (!lon[i])) {
+            fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&appid=${apiKey}`)
+                .then(function (response) {
+                    return response.json()
+                })
+                    .then(function (data) {
+                        // Assign global lat and lon the first lat and lon result of each search
                         lat.push(data[0].lat);
                         lon.push(data[0].lon);
-                    }
-                    
-                    // Pass our current index into getWeather function to use on the lat and lon arrays later
-                    getWeather(i);
-                })
+                        // Pass our current index into getWeather function to use on the lat and lon arrays later
+                        
+                    })
+                        .then(getWeather(i))
+        }
     }
-}
 
-else if (countryObject.countryCode != 'US') {
+    else if (countryObject.countryCode != 'US') {
 
-    // If it is NOT, run the query without a state code
+        // If it is NOT, run the query without a state code
 
-    for (let i = 0; i < countryObject.cities.length; i++) {
+        for (let i = 0; i < countryObject.cities.length; i++) {
 
-        let cityName = countryObject.cities[i];
-        const countryCode = countryObject.countryCode;
+            let cityName = countryObject.cities[i];
+            const countryCode = countryObject.countryCode;
 
-        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&appid=${apiKey}`)
-            .then(function (response) {
-                return response.json()
-            })
-                .then(function (data) {
-                    // Assign global lat and lon the first lat and lon result of each search
-                    // While loop ensures that a value gets passed in lat and lon
-                    while ((!lat[i]) && (!lon[i])) {
+            fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&appid=${apiKey}`)
+                .then(function (response) {
+                    return response.json()
+                })
+                    .then(function (data) {
+                        // Assign global lat and lon the first lat and lon result of each search
                         lat.push(data[0].lat);
                         lon.push(data[0].lon);
-                    }
-                    // Pass our current index into getWeather function to use on the lat and lon arrays later
-                    getWeather(i);
-                })
+                        // Pass our current index into getWeather function to use on the lat and lon arrays later
+                        getWeather(i);
+                    })
+        }
     }
 }
 
@@ -84,7 +81,6 @@ function createCards(weatherData, city){
     // Get handle on the widget
 
     const weatherDisplayEl = document.querySelector('#weatherForecastDisplay');
-
     // Create elements to add to widget
 
     const weatherCard = document.createElement('div');
@@ -116,6 +112,16 @@ function createCards(weatherData, city){
 
 }
 
+function removeWeatherCards() {
+
+    // Removes weather cards
+    const weatherDisplayEl = document.querySelector('#weatherForecastDisplay');
+    while (weatherDisplayEl.firstChild) {
+            weatherDisplayEl.removeChild(weatherDisplayEl.lastChild);
+        }
+}
+
+weatherWidget();
 
 
 

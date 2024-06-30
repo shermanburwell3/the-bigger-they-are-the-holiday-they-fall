@@ -110,6 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fetch holidays data based on the country code, year, and target date
     if (countryCode) {
       fetchHoliday(countryCode, year, countryName, targetDate);
+      removeWeatherCards();
+      weatherWidget();
     }
   });
 
