@@ -156,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             countryName: countryName,
           };
           localStorage.setItem("holidayInfo", JSON.stringify(holidayInfo));
+          window.location.href = "./detailPage.html";
           displayHolidayInfo();
         }
       })
