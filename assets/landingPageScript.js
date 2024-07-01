@@ -102,3 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 });
+
+// Get the Favorites button element by its ID
+const favoritesBtn = document.getElementById("favoritesBtn");
+
+if (favoritesBtn) {
+  favoritesBtn.addEventListener("click", () => {
+    // Redirect the user to the detailPage.html page when the Favorites button is clicked
+    window.location.href = "./detailPage.html";
+  });
+};
