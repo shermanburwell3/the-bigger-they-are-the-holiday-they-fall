@@ -185,15 +185,14 @@ h3 {
   width: 600px;
   font-size: 16px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 /*Formats the weatherForecast cards content*/
 .weatherForecast div {
   background-color: var(--redAC);
   border-color: var(--whiteAC);
-  width: 35%;
-  display: inline-block;
+  width: 30%; /* Adjust the width as needed */
   border-style: solid;
 }
 
