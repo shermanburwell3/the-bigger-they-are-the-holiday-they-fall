@@ -89,3 +89,9 @@ useful for form when ready*/
   background-color: white;
   max-width: 200px;
 }
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
