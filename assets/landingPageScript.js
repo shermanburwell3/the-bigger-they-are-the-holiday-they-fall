@@ -83,11 +83,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // If a closest future holiday is found, store its information and redirect to detail page
         if (closestHoliday) {
-          localStorage.setItem('weatherDate', closestHoliday.date);
-      
+          const updatedDate = new Date(closestHoliday.date);
+          updatedDate.setDate(updatedDate.getDate() + 1); // Add one day
+
+          localStorage.setItem(
+            "weatherDate",
+            updatedDate.toISOString().split("T")[0]
+          );
+
           const holidayInfo = {
             name: closestHoliday.name,
-            date: new Date(closestHoliday.date).toLocaleDateString("en-US", {
+            date: updatedDate.toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
             }),
