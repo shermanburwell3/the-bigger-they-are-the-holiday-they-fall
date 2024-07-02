@@ -17,18 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to display holiday information
   function displayHolidayInfo() {
     const holidayInfo = JSON.parse(localStorage.getItem("holidayInfo"));
-    // Check if holidayInfo exists
     if (holidayInfo) {
-      // Parse the date stored in holidayInfo, add one day to it, and format it back to a readable string
-      const date = new Date(holidayInfo.date);
-      date.setDate(date.getDate() + 1); // Add one day
-      // Define options for formatting the date
-      const options = { month: "long", day: "numeric" };
-      // Format the updated date as a string in a specific locale
-      const formattedDate = date.toLocaleDateString("en-US", options);
-      // Update the holidayInfo object with the new formatted date
-      holidayInfo.date = formattedDate;
-      // Display the updated holiday information in the HTML elements
       document.getElementById("holidayName").textContent = holidayInfo.name;
       document.getElementById("holidayDate").textContent = holidayInfo.date;
       document.getElementById("holidayCountry").textContent =
@@ -75,17 +64,27 @@ document.addEventListener("DOMContentLoaded", () => {
     favList.forEach((favorite) => {
       const listItem = document.createElement("button");
       listItem.textContent = `${favorite.name}: ${favorite.countryName}, ${favorite.date}`;
+      listItem.addEventListener("click", () => {
+        updateHolidayInfoAndDisplay(favorite);
+      });
       listGroup.appendChild(listItem);
     });
   }
 
+  // Function to update holidayInfo in localStorage and display the updated info
+  function updateHolidayInfoAndDisplay(holiday) {
+    // Update holidayInfo in localStorage
+    localStorage.setItem("holidayInfo", JSON.stringify(holiday));
+
+    // Toggle the 'clicked' class on the heart button
+    toggleColor(heartBtn);
+
+    // Display the updated holiday information
+    displayHolidayInfo();
+  }
+
   // Display existing favorites on page load
   displayFavorites();
-
-  // Function to toggle the CSS class "clicked" on a button element
-  function toggleColor(button) {
-    button.classList.toggle("clicked");
-  }
 
   // Event listener for form submission to handle holiday search functionality
   document.getElementById("holidayForm").addEventListener("submit", (event) => {
@@ -145,11 +144,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // If a closest future holiday is found, store its information and redirect to detail page
         if (closestHoliday) {
-          localStorage.setItem("weatherDate", closestHoliday.date);
+          const updatedDate = new Date(closestHoliday.date);
+          updatedDate.setDate(updatedDate.getDate() + 1); // Add one day
+
+          localStorage.setItem(
+            "weatherDate",
+            updatedDate.toISOString().split("T")[0]
+          );
 
           const holidayInfo = {
             name: closestHoliday.name,
-            date: new Date(closestHoliday.date).toLocaleDateString("en-US", {
+            date: updatedDate.toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
             }),
@@ -157,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
           };
           localStorage.setItem("holidayInfo", JSON.stringify(holidayInfo));
           window.location.href = "./detailPage.html";
-          displayHolidayInfo();
         }
       })
       .catch((error) => {
