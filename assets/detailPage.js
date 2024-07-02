@@ -76,11 +76,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update holidayInfo in localStorage
     localStorage.setItem("holidayInfo", JSON.stringify(holiday));
 
-    // Toggle the 'clicked' class on the heart button
-    toggleColor(heartBtn);
-
     // Display the updated holiday information
     displayHolidayInfo();
+
+    // Delay toggling the 'clicked' class on the heart button
+    setTimeout(() => {
+      toggleColor(heartBtn);
+    }, 100);
   }
 
   // Display existing favorites on page load
